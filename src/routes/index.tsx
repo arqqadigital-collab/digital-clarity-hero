@@ -31,7 +31,7 @@ function Index() {
         loop
         playsInline
       />
-      <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
 
       {/* Content */}
       <div className="relative z-10 flex min-h-screen flex-col">
@@ -43,7 +43,7 @@ function Index() {
               <a
                 key={link}
                 href="#"
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+                className="text-sm font-medium text-white/80 transition-colors hover:text-white"
               >
                 {link}
               </a>
@@ -59,8 +59,8 @@ function Index() {
         </header>
 
         <section className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-          <h1 className="max-w-5xl text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
-            <span style={{ color: "var(--brand-dark)" }}>Transforming Complexity</span>
+          <h1 className="max-w-3xl text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            <span className="text-white">Transforming Complexity</span>
             <br />
             <span
               className="bg-clip-text text-transparent"
@@ -70,7 +70,7 @@ function Index() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
+          <p className="mt-6 max-w-2xl text-base text-white/80 md:text-lg">
             End-to-end digital transformation for modern enterprises and healthcare organizations.
           </p>
 
