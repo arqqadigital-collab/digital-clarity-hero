@@ -100,7 +100,7 @@ export function ProcessSection() {
             {cards.map((card, i) => (
               <article
                 key={i}
-                className="relative flex h-[68vh] w-[88vw] shrink-0 overflow-hidden rounded-3xl shadow-xl md:w-[640px] lg:w-[720px]"
+                className="relative flex h-[68vh] w-[88vw] shrink-0 overflow-hidden rounded-[2.5rem] shadow-xl md:w-[640px] lg:w-[720px]"
               >
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
@@ -111,7 +111,7 @@ export function ProcessSection() {
                   playsInline
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
-                <div className="relative z-10 flex h-full w-full flex-col justify-end p-7 md:p-9">
+                <div className="relative z-10 flex h-full w-full flex-col justify-end p-7 pb-16 md:p-10 md:pb-20">
                   <h3 className="max-w-md text-2xl font-bold leading-tight text-white md:text-3xl">
                     {card.title}
                   </h3>
