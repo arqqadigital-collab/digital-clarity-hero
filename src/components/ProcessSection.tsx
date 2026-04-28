@@ -79,7 +79,7 @@ export function ProcessSection() {
               </h2>
             </div>
             <div className="flex flex-col items-start gap-6 md:items-end">
-              <p className="max-w-md text-base text-muted-foreground md:text-right md:text-lg">
+              <p className="max-w-md text-left text-base text-muted-foreground md:text-lg">
                 Our solutions combine technology, automation, and industry expertise to help
                 organizations modernize operations and accelerate digital growth.
               </p>
