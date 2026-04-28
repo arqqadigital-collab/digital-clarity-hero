@@ -47,7 +47,7 @@ function Index() {
     <>
       <main
         ref={heroRef}
-        className="relative min-h-screen overflow-hidden bg-background"
+        className="relative h-screen w-full overflow-hidden bg-background"
       >
         {/* Parallax background video */}
         <motion.video
@@ -64,7 +64,7 @@ function Index() {
         {/* Content */}
         <motion.div
           style={{ y: contentY, opacity: contentOpacity }}
-          className="relative z-10 flex min-h-screen flex-col"
+          className="relative z-10 flex h-full flex-col"
         >
           <header className="flex items-center justify-between px-6 py-6 md:px-12">
             <img
@@ -120,8 +120,22 @@ function Index() {
         </motion.div>
       </main>
 
+      {/* Blur transition between hero and Expertise */}
+      <div
+        aria-hidden
+        className="relative z-20 -mt-32 h-32 w-full"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 0%, hsl(var(--background) / 0.6) 50%, hsl(var(--background)) 100%)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 60%, black 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 60%, black 100%)",
+        }}
+      />
+
       {/* Parallax reveal: Expertise sits above hero as user scrolls */}
-      <div className="relative z-20 -mt-16 rounded-t-[2.5rem] bg-background shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.4)]">
+      <div className="relative z-20 rounded-t-[2.5rem] bg-background shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.4)]">
         <ExpertiseSection />
         <ProcessSection />
         <ServicesSection />
