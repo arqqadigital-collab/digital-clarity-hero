@@ -87,26 +87,38 @@ export function PromiseSection() {
             return (
               <motion.div
                 key={p.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-3xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg md:p-10"
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-2xl md:p-10"
               >
+                {/* Hover gradient glow */}
                 <div
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-[var(--shadow-brand)]"
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(circle at top right, color-mix(in oklab, var(--brand-blue) 15%, transparent), transparent 60%)",
+                  }}
+                />
+
+                <motion.div
+                  whileHover={{ rotate: 8, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  className="relative flex h-14 w-14 items-center justify-center rounded-2xl shadow-[var(--shadow-brand)]"
                   style={{ background: "var(--gradient-brand)" }}
                 >
                   <Icon className="h-6 w-6 text-white" />
-                </div>
+                </motion.div>
 
                 <h3
-                  className="mt-8 text-xl font-bold tracking-tight md:text-2xl"
+                  className="relative mt-8 text-xl font-bold tracking-tight transition-colors md:text-2xl"
                   style={{ color: "var(--brand-dark)" }}
                 >
                   {p.title}
                 </h3>
 
-                <p className="mt-3 text-base text-muted-foreground">{p.description}</p>
+                <p className="relative mt-3 text-base text-muted-foreground">{p.description}</p>
               </motion.div>
             );
           })}
