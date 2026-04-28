@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import process1 from "@/assets/process-1.mov";
 import process2 from "@/assets/process-2.mov";
 import process3 from "@/assets/process-3.mov";
@@ -100,47 +100,25 @@ export function ProcessSection() {
             {cards.map((card, i) => (
               <article
                 key={i}
-                className="flex h-[68vh] w-[88vw] shrink-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-xl md:w-[640px] lg:w-[720px]"
+                className="relative flex h-[68vh] w-[88vw] shrink-0 overflow-hidden rounded-3xl shadow-xl md:w-[640px] lg:w-[720px]"
               >
-                <div className="relative h-1/2 overflow-hidden">
-                  <video
-                    className="h-full w-full object-cover"
-                    src={card.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-7 md:p-9">
-                  <h3
-                    className="text-xl font-bold leading-tight md:text-2xl"
-                    style={{ color: "var(--brand-dark)" }}
-                  >
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={card.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+                <div className="relative z-10 flex h-full w-full flex-col justify-end p-7 md:p-9">
+                  <h3 className="max-w-md text-2xl font-bold leading-tight text-white md:text-3xl">
                     {card.title}
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground md:text-base">
-                    {card.description}
-                  </p>
-                  <ul className="mt-4 space-y-2">
-                    {card.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="flex items-start gap-2 text-sm md:text-base"
-                        style={{ color: "var(--brand-dark)" }}
-                      >
-                        <Check
-                          className="mt-0.5 h-4 w-4 shrink-0"
-                          style={{ color: "var(--brand-blue)" }}
-                        />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
                   <a
                     href="#"
-                    className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold transition-opacity hover:opacity-80"
-                    style={{ color: "var(--brand-blue)" }}
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105"
+                    style={{ background: "var(--gradient-brand)" }}
                   >
                     Explore
                     <ArrowUpRight className="h-4 w-4" />

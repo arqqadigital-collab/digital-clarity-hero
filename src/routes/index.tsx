@@ -43,16 +43,15 @@ function Index() {
         className="relative min-h-screen overflow-hidden bg-background"
       >
         {/* Parallax background video */}
-        <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[10%] h-[120%] w-full">
-          <video
-            className="h-full w-full object-cover"
-            src={headerVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </motion.div>
+        <motion.video
+          style={{ y: bgY }}
+          className="absolute inset-0 -top-[10%] h-[120%] w-full object-cover"
+          src={headerVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
 
         {/* Content */}
