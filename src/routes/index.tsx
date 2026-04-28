@@ -64,7 +64,7 @@ function Index() {
         {/* Content */}
         <motion.div
           style={{ y: contentY, opacity: contentOpacity }}
-          className="relative z-10 flex min-h-screen flex-col"
+          className="relative z-10 flex h-full flex-col"
         >
           <header className="flex items-center justify-between px-6 py-6 md:px-12">
             <img
