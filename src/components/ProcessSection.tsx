@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import process1 from "@/assets/process-1.mov";
 import process2 from "@/assets/process-2.mov";
 import process3 from "@/assets/process-3.mov";
