@@ -7,6 +7,7 @@ import headerVideo from "@/assets/header-bg.mp4";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
 import { StatsSection } from "@/components/StatsSection";
 import { ProcessSection } from "@/components/ProcessSection";
+import { PromiseSection } from "@/components/PromiseSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -118,6 +119,7 @@ function Index() {
         <ExpertiseSection />
         <ProcessSection />
         <StatsSection />
+        <PromiseSection />
       </div>
     </>
   );
