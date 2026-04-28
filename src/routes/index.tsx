@@ -123,6 +123,7 @@ function Index() {
         <ServicesSection />
         <StatsSection />
         <PromiseSection />
+        <ClientsSection />
       </div>
     </>
   );
