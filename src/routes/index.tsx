@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 import headerVideo from "@/assets/header-bg.mp4";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
+import { StatsSection } from "@/components/StatsSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
