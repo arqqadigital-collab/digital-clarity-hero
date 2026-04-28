@@ -91,7 +91,7 @@ export function SuccessStoriesSection() {
               className="absolute inset-0 h-full w-full object-cover"
             />
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
+          
         </div>
 
         {/* Text */}
