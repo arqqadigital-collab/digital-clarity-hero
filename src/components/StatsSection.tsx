@@ -84,7 +84,7 @@ export function StatsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="rounded-3xl border border-border bg-card p-10 text-center shadow-sm transition-shadow hover:shadow-lg"
+                className="p-10 text-center"
               >
                 <div
                   className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl"
