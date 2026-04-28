@@ -116,7 +116,7 @@ export function ServicesSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex h-full max-w-2xl flex-col justify-center p-8 md:p-16">
+            <div className="relative z-10 flex h-full max-w-2xl flex-col justify-center p-8 pb-32 md:p-16 md:pb-40">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.number}
