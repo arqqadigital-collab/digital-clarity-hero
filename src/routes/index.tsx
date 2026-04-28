@@ -12,6 +12,8 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { ClientsSection } from "@/components/ClientsSection";
 import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import { PartnersSection } from "@/components/PartnersSection";
+import { CtaSection } from "@/components/CtaSection";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -128,7 +130,9 @@ function Index() {
         <ClientsSection />
         <SuccessStoriesSection />
         <PartnersSection />
+        <CtaSection />
       </div>
+      <Footer />
     </>
   );
 }
