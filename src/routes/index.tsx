@@ -119,6 +119,7 @@ function Index() {
         <ExpertiseSection />
         <ProcessSection />
         <StatsSection />
+        <PromiseSection />
       </div>
     </>
   );
