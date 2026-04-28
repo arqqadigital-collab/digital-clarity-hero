@@ -88,6 +88,7 @@ function Index() {
       </div>
     </main>
     <ExpertiseSection />
+    <StatsSection />
     </>
   );
 }
