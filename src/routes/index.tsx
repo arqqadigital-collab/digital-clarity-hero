@@ -8,6 +8,7 @@ import { ExpertiseSection } from "@/components/ExpertiseSection";
 import { StatsSection } from "@/components/StatsSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { PromiseSection } from "@/components/PromiseSection";
+import { ServicesSection } from "@/components/ServicesSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -118,6 +119,7 @@ function Index() {
       <div className="relative z-20 -mt-16 rounded-t-[2.5rem] bg-background shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.4)]">
         <ExpertiseSection />
         <ProcessSection />
+        <ServicesSection />
         <StatsSection />
         <PromiseSection />
       </div>
