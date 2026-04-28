@@ -47,7 +47,7 @@ function Index() {
     <>
       <main
         ref={heroRef}
-        className="relative min-h-screen overflow-hidden bg-background"
+        className="relative h-screen w-full overflow-hidden bg-background"
       >
         {/* Parallax background video */}
         <motion.video
