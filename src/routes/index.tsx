@@ -4,7 +4,6 @@ import logo from "@/assets/logo.png";
 import headerVideo from "@/assets/header-bg.mp4";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
 import { StatsSection } from "@/components/StatsSection";
-import { ServicesSection } from "@/components/ServicesSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -90,7 +89,6 @@ function Index() {
     </main>
     <ExpertiseSection />
     <StatsSection />
-    <ServicesSection />
     </>
   );
 }
