@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 import headerVideo from "@/assets/header-bg.mp4";
+import { ExpertiseSection } from "@/components/ExpertiseSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -21,6 +22,7 @@ const navLinks = ["Products", "Solutions", "Company", "Clients", "Case Studies",
 
 function Index() {
   return (
+    <>
     <main className="relative min-h-screen overflow-hidden bg-background">
       {/* Background video */}
       <video
@@ -84,5 +86,7 @@ function Index() {
         </section>
       </div>
     </main>
+    <ExpertiseSection />
+    </>
   );
 }
