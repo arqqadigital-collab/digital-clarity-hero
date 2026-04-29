@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Star } from "lucide-react";
 import caseErp from "@/assets/case-erp.jpg";
 import caseHealthcare from "@/assets/case-healthcare.jpg";
 import caseFintech from "@/assets/case-fintech.jpg";
@@ -15,21 +14,21 @@ type Story = {
 const stories: Story[] = [
   {
     quote:
-      "We faced severe challenges with our legacy operational systems and data fragmentation. The team managed a full ERP migration seamlessly, providing us with unified reporting and automated workflows. I highly recommend their expertise for large-scale enterprise deployments.",
+      "Their team managed a full ERP migration seamlessly, providing us with unified reporting and automated workflows.",
     name: "Ahmed Al-Mansoori",
     company: "Global Logistics Corp",
     image: caseErp,
   },
   {
     quote:
-      "Ensuring compliance with DHA standards while modernizing our patient records seemed daunting. Their healthcare transformation framework not only secured our data but enhanced our clinical efficiency by 40%, drastically improving patient outcomes.",
+      "Their healthcare transformation framework secured our data and enhanced our clinical efficiency by 40%.",
     name: "Dr. Sarah Jenkins",
     company: "Prime Care Hospitals",
     image: caseHealthcare,
   },
   {
     quote:
-      "Lacking an internal specialized IT team, we relied completely on their managed services. They now handle our entire cybersecurity posture and infrastructure scaling, allowing us to focus entirely on our core business growth with total peace of mind.",
+      "They handle our cybersecurity posture and infrastructure scaling, letting us focus on core business growth.",
     name: "Michael Chang",
     company: "FinTech Solutions",
     image: caseFintech,
@@ -37,19 +36,11 @@ const stories: Story[] = [
 ];
 
 export function SuccessStoriesSection() {
-  const [active, setActive] = useState(0);
-  const story = stories[active];
-
-  const next = () => setActive((p) => (p + 1) % stories.length);
-  const prev = () => setActive((p) => (p - 1 + stories.length) % stories.length);
-
   return (
     <section className="relative overflow-hidden bg-[#0a1628] px-6 py-24 md:px-12 md:py-32">
       {/* Header */}
       <div className="mx-auto flex max-w-6xl flex-col items-center text-center">
-        <div
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2"
-        >
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2">
           <span
             className="h-2 w-2 rounded-full"
             style={{ background: "var(--brand-green)" }}
@@ -74,52 +65,43 @@ export function SuccessStoriesSection() {
         </p>
       </div>
 
-      {/* Content */}
-      <div className="mx-auto mt-16 grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-16">
-        {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={story.image}
-              src={story.image}
-              alt={story.company}
-              loading="lazy"
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </AnimatePresence>
-          
-        </div>
+      {/* Cards */}
+      <div className="mx-auto mt-16 grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {stories.map((story, i) => (
+          <motion.article
+            key={story.name}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: i * 0.12, ease: "easeOut" }}
+            className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition hover:border-white/20 hover:bg-white/[0.06]"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={story.image}
+                alt={story.company}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
 
-        {/* Text */}
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-            >
+            <div className="flex flex-1 flex-col p-7">
               <div className="flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
+                {Array.from({ length: 5 }).map((_, idx) => (
                   <Star
-                    key={i}
-                    className="h-5 w-5 fill-current"
+                    key={idx}
+                    className="h-4 w-4 fill-current"
                     style={{ color: "var(--brand-green)" }}
                   />
                 ))}
               </div>
 
-              <p className="mt-6 text-lg leading-relaxed text-white/90 md:text-xl">
+              <p className="mt-5 flex-1 text-base leading-relaxed text-white/85">
                 &ldquo;{story.quote}&rdquo;
               </p>
 
-              <div className="mt-8">
-                <div className="text-lg font-bold text-white">{story.name}</div>
+              <div className="mt-6 border-t border-white/10 pt-5">
+                <div className="text-base font-bold text-white">{story.name}</div>
                 <div
                   className="mt-1 text-sm font-semibold"
                   style={{ color: "var(--brand-green)" }}
@@ -127,47 +109,20 @@ export function SuccessStoriesSection() {
                   {story.company}
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Controls */}
-          <div className="mt-10 flex items-center justify-between">
-            <div className="flex gap-2">
-              {stories.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  aria-label={`Show story ${i + 1}`}
-                  className="h-1.5 rounded-full transition-all"
-                  style={{
-                    width: i === active ? 32 : 16,
-                    background:
-                      i === active
-                        ? "var(--brand-green)"
-                        : "rgba(255,255,255,0.2)",
-                  }}
-                />
-              ))}
             </div>
+          </motion.article>
+        ))}
+      </div>
 
-            <div className="flex gap-3">
-              <button
-                onClick={prev}
-                aria-label="Previous story"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={next}
-                aria-label="Next story"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* See all button */}
+      <div className="mt-14 flex justify-center">
+        <button
+          className="inline-flex items-center gap-3 rounded-full px-9 py-4 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105"
+          style={{ background: "var(--gradient-brand)" }}
+        >
+          See all case studies
+          <ArrowRight className="h-4 w-4" />
+        </button>
       </div>
     </section>
   );
