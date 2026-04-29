@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Building2, Layers, Smile } from "lucide-react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import statsBg from "@/assets/stats-bg.jpg";
 
 type Stat = {
   icon: typeof Building2;
