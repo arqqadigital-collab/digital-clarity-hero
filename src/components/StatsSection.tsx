@@ -123,7 +123,7 @@ export function StatsSection() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
