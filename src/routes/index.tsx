@@ -17,16 +17,6 @@ import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "SBS — Transforming Complexity Into Digital Clarity" },
-      {
-        name: "description",
-        content:
-          "End-to-end digital transformation for modern enterprises and healthcare organizations.",
-      },
-    ],
-  }),
 });
 
 const navLinks = ["Products", "Solutions", "Company", "Clients", "Case Studies", "Contact"];
