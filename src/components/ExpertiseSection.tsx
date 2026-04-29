@@ -52,10 +52,10 @@ export function ExpertiseSection() {
         </a>
       </div>
 
-      <div className="mx-auto mt-16 max-w-6xl px-6">
+      <div className="mt-16 w-full">
         <motion.div
           style={{ scale, borderRadius, opacity }}
-          className="relative overflow-hidden shadow-2xl"
+          className="relative mx-auto overflow-hidden shadow-2xl w-full max-w-[100vw]"
         >
           <img
             src={expertiseImg}
