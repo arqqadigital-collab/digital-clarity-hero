@@ -9,6 +9,7 @@ import { StatsSection } from "@/components/StatsSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { PromiseSection } from "@/components/PromiseSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { ParallaxDivider } from "@/components/ParallaxDivider";
 import { ClientsSection } from "@/components/ClientsSection";
 import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import { PartnersSection } from "@/components/PartnersSection";
@@ -139,6 +140,7 @@ function Index() {
         <ExpertiseSection />
         <ProcessSection />
         <ServicesSection />
+        <ParallaxDivider />
         <StatsSection />
         
         <PromiseSection />
