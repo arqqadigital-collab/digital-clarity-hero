@@ -139,9 +139,8 @@ function Index() {
         <ExpertiseSection />
         <ProcessSection />
         <ServicesSection />
-        <StatsSection />
-        
         <PromiseSection />
+        <StatsSection />
         <ClientsSection />
         <SuccessStoriesSection />
         <PartnersSection />
