@@ -141,6 +141,7 @@ function Index() {
         <ProcessSection />
         <ServicesSection />
         <StatsSection />
+        <ParallaxDivider />
         <PromiseSection />
         <ClientsSection />
         <SuccessStoriesSection />
