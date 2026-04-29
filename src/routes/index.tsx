@@ -52,7 +52,7 @@ function Index() {
         {/* Parallax background video */}
         <motion.video
           style={{ y: bgY }}
-          className="absolute inset-0 -top-[10%] h-[120%] w-full object-cover"
+          className="absolute inset-0 -top-[20%] h-[160%] w-full object-cover"
           src={headerVideo}
           autoPlay
           muted
