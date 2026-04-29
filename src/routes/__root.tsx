@@ -1,4 +1,6 @@
-import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+
+import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -23,9 +25,48 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Lovable App" },
+      { name: "description", content: "Digital Clarity Hub offers end-to-end digital transformation for enterprises and healthcare." },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "Lovable App" },
+      { property: "og:description", content: "Digital Clarity Hub offers end-to-end digital transformation for enterprises and healthcare." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:description", content: "Digital Clarity Hub offers end-to-end digital transformation for enterprises and healthcare." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4d716b87-f632-4aa8-81b9-9dcea789c1b0/id-preview-fae0f409--55ee3c92-8fe8-4554-9a33-768ddee1b302.lovable.app-1777399261041.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4d716b87-f632-4aa8-81b9-9dcea789c1b0/id-preview-fae0f409--55ee3c92-8fe8-4554-9a33-768ddee1b302.lovable.app-1777399261041.png" },
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+    ],
+  }),
+  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
+
+function RootShell({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
 
 function RootComponent() {
   return <Outlet />;
