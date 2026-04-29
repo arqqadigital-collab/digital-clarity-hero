@@ -64,7 +64,7 @@ export function ClientsSection() {
           {loop.map((logo, i) => (
             <div
               key={i}
-              className="flex h-28 w-56 shrink-0 items-center justify-center md:h-32 md:w-64"
+              className="flex h-36 w-72 shrink-0 items-center justify-center md:h-44 md:w-80"
             >
               <img
                 src={logo.src}
