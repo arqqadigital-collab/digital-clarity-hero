@@ -54,8 +54,10 @@ export function StatsSection() {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1.15, 1.25]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.2, 1.4]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.3]);
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden py-24 md:py-32">
