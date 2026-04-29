@@ -54,8 +54,10 @@ export function StatsSection() {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1.15, 1.25]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.2, 1.4]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.3]);
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden py-24 md:py-32">
@@ -73,7 +75,7 @@ export function StatsSection() {
         aria-hidden
       />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="mx-auto max-w-6xl px-6 will-change-transform">
         <div className="text-center">
           <p
             className="text-sm font-semibold uppercase tracking-[0.25em]"
@@ -121,7 +123,7 @@ export function StatsSection() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
