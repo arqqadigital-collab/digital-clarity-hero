@@ -39,8 +39,8 @@ function Index() {
   });
 
   // Parallax: background moves slower, content fades & lifts on scroll out
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
