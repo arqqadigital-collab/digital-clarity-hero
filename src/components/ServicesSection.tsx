@@ -198,8 +198,11 @@ export function ServicesSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
+    </section>
+  );
+}
     </section>
   );
 }
