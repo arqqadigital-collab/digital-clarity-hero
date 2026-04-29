@@ -75,7 +75,7 @@ export function StatsSection() {
         aria-hidden
       />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="mx-auto max-w-6xl px-6 will-change-transform">
         <div className="text-center">
           <p
             className="text-sm font-semibold uppercase tracking-[0.25em]"
