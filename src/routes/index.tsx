@@ -17,6 +17,16 @@ import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "SBS — Transforming Complexity Into Digital Clarity" },
+      {
+        name: "description",
+        content:
+          "End-to-end digital transformation for modern enterprises and healthcare organizations.",
+      },
+    ],
+  }),
 });
 
 const navLinks = ["Products", "Solutions", "Company", "Clients", "Case Studies", "Contact"];
@@ -29,8 +39,8 @@ function Index() {
   });
 
   // Parallax: background moves slower, content fades & lifts on scroll out
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -129,8 +139,8 @@ function Index() {
         <ExpertiseSection />
         <ProcessSection />
         <ServicesSection />
-        <StatsSection />
         <PromiseSection />
+        <StatsSection />
         <ClientsSection />
         <SuccessStoriesSection />
         <PartnersSection />

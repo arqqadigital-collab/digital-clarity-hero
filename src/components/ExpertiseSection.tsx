@@ -10,9 +10,9 @@ export function ExpertiseSection() {
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 1.05]);
-  const borderRadius = useTransform(scrollYProgress, [0, 0.5, 1], [80, 24, 24]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.4, 1, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 1.05]);
+  const borderRadius = useTransform(scrollYProgress, [0, 0.5, 1], [120, 24, 24]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.2, 1, 1]);
 
   return (
     <section ref={ref} className="bg-background py-24 md:py-32">
@@ -52,16 +52,36 @@ export function ExpertiseSection() {
         </a>
       </div>
 
-      <div className="mx-auto mt-16 max-w-6xl px-6">
+      <div className="mt-16 w-full">
         <motion.div
           style={{ scale, borderRadius, opacity }}
-          className="overflow-hidden shadow-2xl"
+          className="relative mx-auto overflow-hidden shadow-2xl w-full max-w-[100vw]"
         >
           <img
             src={expertiseImg}
             alt="Technology expert working on AI healthcare transformation"
             className="h-auto w-full object-cover"
           />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(8,15,35,0.15) 0%, rgba(8,15,35,0.55) 60%, rgba(8,15,35,0.85) 100%)",
+            }}
+            aria-hidden
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-end px-6 pb-10 text-center md:pb-16 lg:pb-20">
+            <h3 className="max-w-3xl text-2xl font-bold leading-[1.15] tracking-tight text-white md:text-4xl lg:text-5xl">
+              Turning Complexity Into Clear Digital Solutions
+            </h3>
+            <button
+              className="mt-6 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105 md:mt-8 md:text-base"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              Start Your Transformation Today
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

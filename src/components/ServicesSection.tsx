@@ -62,14 +62,30 @@ export function ServicesSection() {
   return (
     <section className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center">
-          <p
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.p
             className="text-sm font-semibold uppercase tracking-[0.25em]"
             style={{ color: "var(--brand-blue)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             Our Services
-          </p>
-          <h2 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+          </motion.p>
+          <motion.h2
+            className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          >
             <span style={{ color: "var(--brand-dark)" }}>Solutions Built for </span>
             <span
               className="bg-clip-text text-transparent"
@@ -77,11 +93,17 @@ export function ServicesSection() {
             >
               Impact
             </span>
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         {/* Main feature card */}
-        <div className="relative mt-16 overflow-hidden rounded-[2.5rem] shadow-2xl">
+        <motion.div
+          className="relative mt-16 overflow-hidden rounded-[2.5rem] shadow-2xl"
+          initial={{ opacity: 0, y: 60, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+        >
           <div className="relative h-[520px] md:h-[620px]">
             <AnimatePresence mode="wait">
               <motion.img
@@ -129,7 +151,28 @@ export function ServicesSection() {
                     {current.number}
                   </span>
                   <h3 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
-                    {current.title}
+                    {current.title.split(" ").map((word, wi, arr) => (
+                      <span key={wi} className="inline-block whitespace-nowrap">
+                        {word.split("").map((char, ci) => (
+                          <motion.span
+                            key={ci}
+                            className="inline-block"
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{
+                              duration: 0.5,
+                              ease: "easeOut",
+                              delay:
+                                0.2 +
+                                (arr.slice(0, wi).join(" ").length + ci) * 0.03,
+                            }}
+                          >
+                            {char}
+                          </motion.span>
+                        ))}
+                        {wi < arr.length - 1 && "\u00A0"}
+                      </span>
+                    ))}
                   </h3>
                   <p className="mt-6 max-w-lg text-base text-white/80 md:text-lg">
                     {current.description}
@@ -176,7 +219,7 @@ export function ServicesSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
