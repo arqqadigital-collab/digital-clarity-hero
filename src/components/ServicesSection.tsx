@@ -151,7 +151,28 @@ export function ServicesSection() {
                     {current.number}
                   </span>
                   <h3 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
-                    {current.title}
+                    {current.title.split(" ").map((word, wi, arr) => (
+                      <span key={wi} className="inline-block whitespace-nowrap">
+                        {word.split("").map((char, ci) => (
+                          <motion.span
+                            key={ci}
+                            className="inline-block"
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{
+                              duration: 0.5,
+                              ease: "easeOut",
+                              delay:
+                                0.2 +
+                                (arr.slice(0, wi).join(" ").length + ci) * 0.03,
+                            }}
+                          >
+                            {char}
+                          </motion.span>
+                        ))}
+                        {wi < arr.length - 1 && "\u00A0"}
+                      </span>
+                    ))}
                   </h3>
                   <p className="mt-6 max-w-lg text-base text-white/80 md:text-lg">
                     {current.description}
