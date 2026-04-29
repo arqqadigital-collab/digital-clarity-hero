@@ -203,6 +203,3 @@ export function ServicesSection() {
     </section>
   );
 }
-    </section>
-  );
-}
