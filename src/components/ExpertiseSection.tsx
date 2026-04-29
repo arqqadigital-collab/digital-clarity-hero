@@ -55,13 +55,33 @@ export function ExpertiseSection() {
       <div className="mx-auto mt-16 max-w-6xl px-6">
         <motion.div
           style={{ scale, borderRadius, opacity }}
-          className="overflow-hidden shadow-2xl"
+          className="relative overflow-hidden shadow-2xl"
         >
           <img
             src={expertiseImg}
             alt="Technology expert working on AI healthcare transformation"
             className="h-auto w-full object-cover"
           />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(8,15,35,0.15) 0%, rgba(8,15,35,0.55) 60%, rgba(8,15,35,0.85) 100%)",
+            }}
+            aria-hidden
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-end px-6 pb-10 text-center md:pb-16 lg:pb-20">
+            <h3 className="max-w-3xl text-2xl font-bold leading-[1.15] tracking-tight text-white md:text-4xl lg:text-5xl">
+              Turning Complexity Into Clear Digital Solutions
+            </h3>
+            <button
+              className="mt-6 inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105 md:mt-8 md:text-base"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              Start Your Transformation Today
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>
