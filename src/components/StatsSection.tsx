@@ -105,8 +105,7 @@ export function StatsSection() {
                 className="p-10 text-center"
               >
                 <div
-                  className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl"
-                  style={{ backgroundColor: "oklch(0.62 0.13 230 / 0.2)" }}
+                  className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-lg"
                 >
                   <Icon className="h-6 w-6" style={{ color: "var(--brand-blue)" }} />
                 </div>
