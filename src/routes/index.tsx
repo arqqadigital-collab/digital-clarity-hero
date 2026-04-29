@@ -17,16 +17,6 @@ import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "SBS — Transforming Complexity Into Digital Clarity" },
-      {
-        name: "description",
-        content:
-          "End-to-end digital transformation for modern enterprises and healthcare organizations.",
-      },
-    ],
-  }),
 });
 
 const navLinks = ["Products", "Solutions", "Company", "Clients", "Case Studies", "Contact"];
@@ -38,7 +28,6 @@ function Index() {
     offset: ["start start", "end start"],
   });
 
-  // Parallax: background moves slower, content fades & lifts on scroll out
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "75%"]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
@@ -134,7 +123,7 @@ function Index() {
         }}
       />
 
-      {/* Parallax reveal: Expertise sits above hero as user scrolls */}
+      {/* Parallax reveal */}
       <div className="relative z-20 rounded-t-[2.5rem] bg-background shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.4)]">
         <ExpertiseSection />
         <ProcessSection />
