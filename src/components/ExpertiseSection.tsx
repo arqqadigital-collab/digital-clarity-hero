@@ -10,9 +10,9 @@ export function ExpertiseSection() {
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 1.05]);
-  const borderRadius = useTransform(scrollYProgress, [0, 0.5, 1], [80, 24, 24]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.4, 1, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 1.05]);
+  const borderRadius = useTransform(scrollYProgress, [0, 0.5, 1], [120, 24, 24]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.2, 1, 1]);
 
   return (
     <section ref={ref} className="bg-background py-24 md:py-32">
