@@ -39,8 +39,8 @@ function Index() {
   });
 
   // Parallax: background moves slower, content fades & lifts on scroll out
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "70%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -52,7 +52,7 @@ function Index() {
         {/* Parallax background video */}
         <motion.video
           style={{ y: bgY }}
-          className="absolute inset-0 -top-[20%] h-[160%] w-full object-cover"
+          className="absolute inset-0 -top-[10%] h-[120%] w-full object-cover"
           src={headerVideo}
           autoPlay
           muted
