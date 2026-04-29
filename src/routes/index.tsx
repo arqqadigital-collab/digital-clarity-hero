@@ -13,6 +13,7 @@ import { ClientsSection } from "@/components/ClientsSection";
 import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import { PartnersSection } from "@/components/PartnersSection";
 import { CtaSection } from "@/components/CtaSection";
+import { ParallaxDivider } from "@/components/ParallaxDivider";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
@@ -140,6 +141,7 @@ function Index() {
         <ProcessSection />
         <ServicesSection />
         <StatsSection />
+        <ParallaxDivider />
         <PromiseSection />
         <ClientsSection />
         <SuccessStoriesSection />
